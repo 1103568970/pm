@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="hammer.js"></script>
+    <style>
+        .box{
+            height: 500px;
+            width:400px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box"></div>
+</body>
+</html>
+<script>
+    var box = document.getElementById("box");
+    var hins = new Hammer(box);
+    hins.get('pinch').set({ enable: true });
+    hins.on("pinchin",function(){
+        var sc = 0.3;
+        hins.style.transform="scale("+sc+")";
+        if(sc>=3){
+            sc==3
+        }
+    })
+    hins.on("pinchout",function(){
+        var sc = 0.3;
+        hins.style.transform="scale("+sc+")";
+        if(sc<=0.3){
+            sc==0.3
+        }
+    })
+
+</script>
